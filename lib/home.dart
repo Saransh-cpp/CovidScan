@@ -15,8 +15,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  File image;
-  String category;
+  File? image;
+  String? category;
   bool soundOn = false;
   FlutterTts flutterTts = FlutterTts();
 
@@ -26,7 +26,7 @@ class _HomeState extends State<Home> {
   }
 
   void _getImageAndClassify() async {
-    PickedFile pickedFile = (await ImagePicker().getImage(
+    PickedFile? pickedFile = (await ImagePicker().getImage(
         source: ImageSource.camera, maxHeight: 1080, maxWidth: 1080));
     setState(() {
       if (pickedFile != null) {
@@ -41,8 +41,8 @@ class _HomeState extends State<Home> {
       request.files.add(
           http.MultipartFile(
               'image',
-              image.readAsBytes().asStream(),
-              image.lengthSync(),
+              image!.readAsBytes().asStream(),
+              image!.lengthSync(),
               filename: "image.jpg")
       );
 
@@ -60,7 +60,7 @@ class _HomeState extends State<Home> {
           setState(() {
             category = "Oops, there was an error.";
           });
-          if (soundOn) _speak(category);
+          if (soundOn) _speak(category!);
         }
       });
     }
@@ -114,7 +114,7 @@ class _HomeState extends State<Home> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.file(image, height: MediaQuery
+              Image.file(image!, height: MediaQuery
                   .of(context)
                   .size
                   .height * 0.6,),
@@ -122,7 +122,7 @@ class _HomeState extends State<Home> {
               category == null
                   ? SpinKitDoubleBounce(color: Colors.purple, size: 45)
                   : Text(
-                category, style: TextStyle(fontSize: 20),),
+                category!, style: TextStyle(fontSize: 20),),
               SizedBox(height: 20,),
               TextButton.icon(
                   label: Text("Click another picture",
