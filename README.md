@@ -1,4 +1,4 @@
-# covid_net
+# CovidScan
 
 Semester project for Biology
 
