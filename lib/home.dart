@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
 
     if (image != null) {
       var request = http.MultipartRequest(
-          "POST", Uri.parse("https://scene-net.herokuapp.com/predict"));
+          "POST", Uri.parse("https://covid-net-backend.herokuapp.com/predict"));
       request.files.add(http.MultipartFile(
           'image', image!.readAsBytes().asStream(), image!.lengthSync(),
           filename: "image.jpg"));
@@ -51,9 +51,9 @@ class _HomeState extends State<Home> {
         if (response.statusCode == 200) {
           final result = jsonDecode(stringed.body) as Map<String, dynamic>;
           setState(() {
-            category = "You are in ${result["category"]}";
+            category = "Covid ${result["category"]}";
           });
-          if (soundOn) _speak("You are in $category.");
+          if (soundOn) _speak("Covid $category.");
         } else {
           setState(() {
             category = "Oops, there was an error.";
