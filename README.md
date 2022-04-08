@@ -1,6 +1,25 @@
 # CovidScan
 
-Semester project for Biology
+Covid-19 using transfer learning.
+
+## Description
+
+- Through this app, a user can take a picture of their lung scans.
+- The app uploads the image file to [CovidScanBackend](https://github.com/Saransh-cpp/CovidScanBackend), which is trained, using transfer learning, on a dataset of 10,000+ indoor images.
+- The API returns a specific category (positive or negative) which is then either, only displayed, or, displayed and spoken (text to speech).
+- The user can easily select if they want the app to speak or not.
+
+
+<!-- ## Screenshots
+
+<p float="left" align="center">
+
+  <img src="https://user-images.githubusercontent.com/74055102/144904986-22407d8a-92a3-45ae-b175-10943aab3304.png" height=450/>
+<!--   <img src="https://user-images.githubusercontent.com/74055102/144904994-472460fc-3761-42b1-abb7-d0dc275da79b.png" height=450/> -->
+<!--   <img src="https://user-images.githubusercontent.com/74055102/144904990-1617b4e3-1c41-4505-80e0-20d87f26922c.png" height=450/> -->
+        
+<!-- </p> -->
+
 
 ## Getting Started
 
