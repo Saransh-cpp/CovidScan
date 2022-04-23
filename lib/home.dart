@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: const Text(
-            "SceneNet",
+            "CovidScan",
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.black),
           ),
